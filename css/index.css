@@ -24,7 +24,7 @@ html,body{
 }
 #information .map{
 	width: 100%;
-	height: 29.93%;
+	height: 30%;
 }
 #information .map>img{
 	width: 100%;
@@ -32,7 +32,7 @@ html,body{
 }
 #information .person{
 	width: 100%;
-	height: 70.7%;
+	height: 70%;
 	background: url(../img/personBkg.jpg) no-repeat;
 	background-size: 100% 100%;
 	display: flex;
@@ -52,6 +52,7 @@ html,body{
 }
 #information .person>ul>li{
 	margin-bottom: 0.2rem;
+	font-size: 0.4rem;
 }
 #information .person>ul>li>input{
 	display: block;
@@ -72,4 +73,270 @@ html,body{
 	height: 0.5rem;
 	text-indent: 0.2rem;
 	-webkit-user-select:auto;
+}
+#information .person>ul>li:nth-child(5)>.perBox{
+	margin-left: -10%;
+}
+#information .person>ul>li:nth-child(5)>.perBox>div{
+	float: left;
+	margin-bottom: 0.2rem;
+}
+#information .person>ul>li:nth-child(5)>.perBox>div:nth-child(1){
+	width: 9%;
+	height: 0.4rem;
+	margin-right: 2%;
+}
+#information .person>ul>li:nth-child(5)>.perBox>div:nth-child(2){
+	width: 88%;
+	font-size: 0.23rem;
+	line-height: 0.4rem;
+}
+#information .person>ul>li>button{
+	display: block;
+	width: 121%;
+	margin-left: -10%;
+	border: 1px solid #535353;
+	font-size: 0.32rem;
+	height: 0.7rem;
+	border-radius: 5px;
+	background-color: #333333;
+	color: white;
+}
+#check{
+	border: 1px solid #535353;
+}
+#check img{
+	width: 100%;
+	height: 100%;
+}
+/*页面1*/
+#pageOne{
+	width: 100%;
+	height: 100%;
+	background: url(../img/pageOneBkg.jpg) no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+#pageOne .pageTop{
+	width: 100%;
+	height: 34%;
+}
+#pageOne .pageTop img{
+	width: 100%;
+	height: 100%;
+}
+#pageOne .pageBottom{
+	width: 100%;
+	height: 66%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	-webkit-flex-direction: column;
+}
+#pageOne .pageBottom img:nth-child(1){
+	display: block;
+	margin: 0 auto;
+	width: 74.8%;
+	margin-bottom: 0.6rem;
+}
+#pageOne .pageBottom p{
+	font-size: 0.25rem;
+	line-height: 0.4rem;
+}
+#pageOne .pageBottom button{
+	font-size: 0.3rem;
+	line-height: 0.5rem;
+	width: 2.2rem;
+	color: white;
+	background-color: #000000;
+	margin-top: 0.2rem;
+}
+#pageOne .up{
+	width: 100%;
+	position: absolute;
+	bottom: 10%;
+	opacity: 1;
+}
+#pageOne .up>img{
+	width: 7.33%;
+	margin: 0 auto;
+}
+.upbottom{
+	bottom: 5%;
+	opacity: 0;
+}
+/*page3*/
+#pageThree{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#pageThree .swiper-container-banner .bannerBox>img:nth-child(1){
+	width: 100%;
+}
+#pageThree .bannerBox{
+	position: relative;
+}
+#pageThree .swiper-pagination-bullet{
+	background: #333333;
+}
+#pageThree .swiper-pagination-bullet-active{
+	background: white !important;
+}
+#pageThree .bt1{
+	position: absolute;
+	width: 63.2%;
+	margin-left: 18.4%;
+	top: 9.01%;
+	left: 0;
+}
+#pageThree .bt2{
+	position: absolute;
+	width: 74.26%;
+	margin-left: 12.87%;
+	top: 15.31%;
+	left: 0;
+}
+#pageThree .bt3{
+	position: absolute;
+	width: 85.72%;
+	margin-left: 7.14%;
+	top: 8.25%;
+	left: 0;
+}
+#pageThree .bannerBottom{
+	width: 100%;
+	background: url(../img/bannerBottom.jpg) no-repeat;
+	background-size: 100% 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	-webkit-flex-direction: column;
+}
+#pageThree .bannerBottom>img{
+	display: block;
+	width: 72.53%;
+}
+#pageThree .next{
+	width: 100%;
+	position: absolute;
+	bottom: 5%;
+}
+#pageThree .next>img{
+	width: 7.3%;
+	margin: 0 auto;
+}
+/*第四页*/
+#pageFour{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: url(../img/pageFourBkg.jpg) no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	-webkit-flex-direction: column;
+}
+#pageFour ul li:nth-child(1) p{
+	font-size: 0.5rem;
+	text-align: center;
+	margin-bottom: 0.2rem;
+	color: #333333;
+}
+#pageFour .date{
+	width: 84.8%;
+	display: block;
+	margin: 0 auto;
+	padding: 0.2rem 0;
+}
+#pageFour ul li:nth-child(2) p{
+	font-size: 0.3rem;
+	text-align: center;
+	line-height: 0.5rem;
+	color: #666666;
+}
+#pageFour ul li:nth-child(3)>.dateBox{
+	width: 84.8%;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+}
+#pageFour ul li:nth-child(3)>.dateBox>img{
+	width: 100%;
+}
+#pageFour ul li:nth-child(3)>.dateBox>p{
+	position: absolute;
+	font-size: 0.3rem;
+	color: #666666;
+}
+#pageFour ul li:nth-child(3)>.dateBox>p:nth-child(2)
+{
+	top: -2.5%;
+	left: 18.24%;
+}
+#pageFour ul li:nth-child(3)>.dateBox>p:nth-child(3)
+{
+	top: 9.5%;
+	left: 18.24%;
+}
+#pageFour ul li:nth-child(3)>.dateBox>p:nth-child(4)
+{
+	right: 18.24%;
+	top: 38%;
+}
+#pageFour ul li:nth-child(3)>.dateBox>p:nth-child(5)
+{
+	right: 18.24%;
+	top: 50%;
+}
+#pageFour ul li:nth-child(3)>.dateBox>p:nth-child(6)
+{
+	left: 18.24%;
+	bottom: 9.5%;
+}
+#pageFour ul li:nth-child(3)>.dateBox>p:nth-child(7)
+{
+	bottom: -2.5%;
+	left: 18.24%;
+}
+#pageFour ul li:nth-child(4) p{
+	font-size: 0.3rem;
+	text-align: center;
+	line-height: 0.6rem;
+	color: #666666;
+}
+#pageFour .date1{
+	padding: 0.25rem 0!important;
+}
+#pageFour .tips{
+	margin-top: 0.1rem;
+	font-size: 0.2rem;
+}
+#pageFour .tips p{
+	text-align: center;
+	font-size: 0.2rem;
+	color: #666666;
+	line-height: 0.4rem;
+}
+#pageFour .tips button{
+	width: 84.8%;
+	margin-left: 7.6%;
+	font-size: 0.3rem;
+	line-height: 0.6rem;
+	color: white;
+	background: #333333;
+	border-radius: 5px;
 }
