@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/lufylegend-1.10.1.min.js" ></script>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="load"></div>
+	<div id="mainContent">
+		<div class="swiper-container swiper-container-main">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide">
+	            	<div id="information">
+	            		<div class="map">
+	            			<img src="img/map.png" />
+		            	</div>
+		            	<div class="person">
+		            		<ul>
+		            			<li>
+		            				<p>汇亚TT现代砖全球招商会</p>						
+		            				<p>暨嘻哈年轻夜</p>
+		            			</li>
+		            			<li>
+		            				<input type="text" placeholder="姓名" />
+		            			</li>
+		            			<li>
+		            				<input type="text" placeholder="手机" />
+		            			</li>
+		            			<li>
+		            				<input type="text" placeholder="人数" />
+		            			</li>
+		            		</ul>
+		            	</div>
+	            	</div>
+	            </div>
+	            <div class="swiper-slide">Slide 2</div>
+	            <div class="swiper-slide">Slide 3</div>
+	            <div class="swiper-slide">Slide 4</div>
+	            <div class="swiper-slide">Slide 5</div>
+	            <div class="swiper-slide">Slide 6</div>
+	            <div class="swiper-slide">Slide 7</div>
+	            <div class="swiper-slide">Slide 8</div>
+	            <div class="swiper-slide">Slide 9</div>
+	            <div class="swiper-slide">Slide 10</div>
+	        </div>
+	    </div>
+	</div>
+    <script type="text/javascript" src="js/swiper-3.4.2.min.js" ></script>
+    <script type="text/javascript" src="js/index.js" ></script>
+    <script>
+	    //px转rem
+	    (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 640) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>

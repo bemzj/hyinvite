@@ -1,0 +1,75 @@
+html,body{
+	position: relative;
+	width: 100%;
+    height: 100%;
+    font-family: "微软雅黑";
+}
+/*主内容*/
+#mainContent{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.swiper-container-main{
+    width: 100%;
+    height: 100%;
+}
+/*填写个人信息*/
+#information{
+	width:100%;
+	height: 100%;
+}
+#information .map{
+	width: 100%;
+	height: 29.93%;
+}
+#information .map>img{
+	width: 100%;
+	height: 100%;
+}
+#information .person{
+	width: 100%;
+	height: 70.7%;
+	background: url(../img/personBkg.jpg) no-repeat;
+	background-size: 100% 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	-webkit-flex-direction: column;
+}
+#information .person>ul>li:nth-child(1) p{
+	font-size: 0.32rem;
+	text-align: center;
+	color: #333333;
+	line-height: 0.5rem;
+}
+#information .person>ul>li{
+	margin-bottom: 0.2rem;
+}
+#information .person>ul>li>input{
+	display: block;
+	width: 120%;
+	margin-left: -10%;
+	font-size: 0.32rem;
+	border: 1px solid #535353;
+	line-height: 0.5rem;
+	text-indent: 0.2rem;
+	-webkit-user-select:auto;
+}
+#information .person>ul>li>select{
+	display: block;
+	width: 120%;
+	margin-left: -10%;
+	font-size: 0.32rem;
+	border: 1px solid #535353;
+	height: 0.5rem;
+	text-indent: 0.2rem;
+	-webkit-user-select:auto;
+}
