@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 	<script type="text/javascript" src="js/lufylegend-1.10.1.min.js" ></script>
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -23,14 +24,23 @@
 	        			<div class="pageTop">
 	        				<img src="img/videoOne.jpg" />
 	        			</div>
-	        			<div class="pageBottom">
-	        				<img src="img/pageOneTitle.png" />
-	        				<p>时间：2017年10月21日</p>
-	        				<p>地点：顺德金茂华美达广场酒店</p>
-	        				<button>一键解锁年轻</button>
+	        			<div class="pageBottom">	        				
+	        				<img src="img/pageOneTitle.png" class="page1"/>
+	        				<p class="page1">时间：2017年10月21日</p>
+	        				<p class="page1">地点：顺德金茂华美达广场酒店</p>
+	        				<button class="page1">一键解锁年轻</button>
+	        				<img src="img/logoBkg.png" class="logoBkg"/>
 	        			</div>
 	        			<div class="up">
 	        				<img src="img/up.png" />
+	        			</div>
+	        		</div>
+	        	</div>
+	        	<div class="swiper-slide">
+	        		<div id="pageTwo">
+	        			<video id="videot" class="videos show" style="object-fit: fill" autoplay="autoplay" preload="auto"  x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="" src="http://wqs.jd.com/promote/superfestival/superfestival.mp4" width="1" height="1" type="video/mp4" style="opacity: 1;"></video>
+	        			<div id="videoplay">
+	        				<img src="img/bigplay.png" />
 	        			</div>
 	        		</div>
 	        	</div>
@@ -60,7 +70,7 @@
 		        			<div class="swiper-pagination"></div>
 		        		</div>
 		        		<div class="bannerBottom">
-		        			<img src="img/btitle.png" />
+		        			<img src="img/btitle.png" class="page3" />
 		        		</div>
 		        		<div class="next">
 		        			<img src="img/up.png" />
@@ -71,33 +81,33 @@
 					<div id="pageFour">
 						<ul>
 							<li>
-								<p>- 活动流程 -</p>
+								<p class="page41">- 活动流程 -</p>
 							</li>
 							<li>
 								<img class="date" src="img/date01.png" />
-								<p>14:20-20:30</p>
-								<p>入住报到|金茂华美达广场酒店</p>
+								<p class="page42">14:20-20:30</p>
+								<p class="page42">入住报到|金茂华美达广场酒店</p>
 							</li>
 							<li>
 								<img class="date date1" src="img/date02.png" />
 								<div class="dateBox">
-									<img src="img/dateImg.png" />
-									<p>汇亚TT总部展厅开业</p>
-									<p>汇亚TT总部展厅</p>
-									<p>汇亚TT现代砖全球招商会</p>
-									<p>金茂华美达广场酒店</p>
-									<p>汇亚TT现代砖嘻哈年轻夜</p>
-									<p>金茂华美达广场酒店</p>
+									<img class="page43" src="img/dateImg.png" />
+									<p class="page43">汇亚TT总部展厅开业</p>
+									<p class="page43">汇亚TT总部展厅</p>
+									<p class="page43">汇亚TT现代砖全球招商会</p>
+									<p class="page43">金茂华美达广场酒店</p>
+									<p class="page43">汇亚TT现代砖嘻哈年轻夜</p>
+									<p class="page43">金茂华美达广场酒店</p>
 								</div>
 							</li>
 							<li>
 								<img class="date date1" src="img/date03.png" style="padding-bottom: 0.1rem!important;"/>
-								<p>返程</p>
+								<p class="page44">返程</p>
 							</li>
 							<li>
 								<div class="tips">
-									<p>温馨提示：请经销商自行安排好时间，以免错过精彩活动</p>
-									<button id="rightnow">马上报名</button>
+									<p class="page45">温馨提示：请经销商自行安排好时间，以免错过精彩活动</p>
+									<button id="rightnow" class="page45">马上报名</button>
 								</div>
 							</li>
 						</ul>
@@ -111,8 +121,8 @@
 		            	<div class="person">
 		            		<ul>
 		            			<li>
-		            				<p>汇亚TT现代砖全球招商会</p>						
-		            				<p>暨嘻哈年轻夜</p>
+		            				<p class="page5">汇亚TT现代砖全球招商会</p>						
+		            				<p class="page5">暨嘻哈年轻夜</p>
 		            			</li>
 		            			<li>
 		            				<input type="text" placeholder="姓名" />
@@ -141,15 +151,7 @@
 		            	</div>
 	            	</div>
 	            </div>
-	            
-	            
-	            
-	            <div class="swiper-slide">Slide 5</div>
-	            <div class="swiper-slide">Slide 6</div>
-	            <div class="swiper-slide">Slide 7</div>
-	            <div class="swiper-slide">Slide 8</div>
-	            <div class="swiper-slide">Slide 9</div>
-	            <div class="swiper-slide">Slide 10</div>
+
 	        </div>
 	    </div>
 	</div>

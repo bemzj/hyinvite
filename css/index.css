@@ -136,16 +136,27 @@ html,body{
 	-webkit-align-items: center;
 	-webkit-justify-content: center;
 	-webkit-flex-direction: column;
+	position: relative;
+}
+.logoBkg{
+	position: absolute;
+	top: 0.4rem;
+	left: 8.7%;
+	width: 82.6%;
+	z-index: 3;
+	opacity: 0.5;
 }
 #pageOne .pageBottom img:nth-child(1){
 	display: block;
 	margin: 0 auto;
 	width: 74.8%;
 	margin-bottom: 0.6rem;
+	z-index: 5;
 }
 #pageOne .pageBottom p{
 	font-size: 0.25rem;
 	line-height: 0.4rem;
+	z-index: 5;
 }
 #pageOne .pageBottom button{
 	font-size: 0.3rem;
@@ -154,16 +165,19 @@ html,body{
 	color: white;
 	background-color: #000000;
 	margin-top: 0.2rem;
+	z-index: 5;
 }
 #pageOne .up{
 	width: 100%;
 	position: absolute;
-	bottom: 10%;
+	bottom: 8%;
 	opacity: 1;
+	z-index: 5;
 }
 #pageOne .up>img{
 	width: 7.33%;
 	margin: 0 auto;
+	z-index: 5;
 }
 .upbottom{
 	bottom: 5%;
@@ -174,6 +188,7 @@ html,body{
 	position: relative;
 	width: 100%;
 	height: 100%;
+	overflow-y:scroll ;
 }
 #pageThree .swiper-container-banner .bannerBox>img:nth-child(1){
 	width: 100%;
@@ -196,9 +211,9 @@ html,body{
 }
 #pageThree .bt2{
 	position: absolute;
-	width: 74.26%;
-	margin-left: 12.87%;
-	top: 15.31%;
+	width: 73%;
+	margin-left: 13.5%;
+	top: 14%;
 	left: 0;
 }
 #pageThree .bt3{
@@ -209,7 +224,11 @@ html,body{
 	left: 0;
 }
 #pageThree .bannerBottom{
+	position: absolute;
+	z-index: 5;
+	bottom: 0;
 	width: 100%;
+	height: 23%;
 	background: url(../img/bannerBottom.jpg) no-repeat;
 	background-size: 100% 100%;
 	display: flex;
@@ -223,22 +242,27 @@ html,body{
 }
 #pageThree .bannerBottom>img{
 	display: block;
-	width: 72.53%;
+	width: 50%;
+	margin-bottom: 5%;
 }
 #pageThree .next{
 	width: 100%;
 	position: absolute;
 	bottom: 5%;
+	z-index: 10;
 }
 #pageThree .next>img{
 	width: 7.3%;
 	margin: 0 auto;
 }
+#pageThree .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 3.0rem;
+}
 /*第四页*/
 #pageFour{
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow-y:scroll;
 	background: url(../img/pageFourBkg.jpg) no-repeat;
 	background-size: cover;
 	display: flex;
@@ -251,21 +275,21 @@ html,body{
 	-webkit-flex-direction: column;
 }
 #pageFour ul li:nth-child(1) p{
-	font-size: 0.5rem;
+	font-size: 0.4rem;
 	text-align: center;
-	margin-bottom: 0.2rem;
+	margin-bottom: 0.1rem;
 	color: #333333;
 }
 #pageFour .date{
 	width: 84.8%;
 	display: block;
 	margin: 0 auto;
-	padding: 0.2rem 0;
+	padding: 0.15rem 0;
 }
 #pageFour ul li:nth-child(2) p{
-	font-size: 0.3rem;
+	font-size: 0.28rem;
 	text-align: center;
-	line-height: 0.5rem;
+	line-height: 0.4rem;
 	color: #666666;
 }
 #pageFour ul li:nth-child(3)>.dateBox{
@@ -279,7 +303,7 @@ html,body{
 }
 #pageFour ul li:nth-child(3)>.dateBox>p{
 	position: absolute;
-	font-size: 0.3rem;
+	font-size: 0.28rem;
 	color: #666666;
 }
 #pageFour ul li:nth-child(3)>.dateBox>p:nth-child(2)
@@ -313,13 +337,13 @@ html,body{
 	left: 18.24%;
 }
 #pageFour ul li:nth-child(4) p{
-	font-size: 0.3rem;
+	font-size: 0.28rem;
 	text-align: center;
-	line-height: 0.6rem;
+	line-height: 0.4rem;
 	color: #666666;
 }
 #pageFour .date1{
-	padding: 0.25rem 0!important;
+	padding: 0.22rem 0!important;
 }
 #pageFour .tips{
 	margin-top: 0.1rem;
@@ -334,9 +358,41 @@ html,body{
 #pageFour .tips button{
 	width: 84.8%;
 	margin-left: 7.6%;
-	font-size: 0.3rem;
-	line-height: 0.6rem;
+	font-size: 0.28rem;
+	line-height: 0.5rem;
 	color: white;
 	background: #333333;
 	border-radius: 5px;
+}
+/*第二页*/
+#pageTwo{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#pageTwo video{
+	width: 100%;
+	height: 100%;
+}
+#videoplay{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	background: url(../img/page2.jpg) no-repeat;
+	background-size: 100% 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	-webkit-flex-direction: column;
+}
+.videos.show {
+	width: 100%;
+	height: 100%;
 }

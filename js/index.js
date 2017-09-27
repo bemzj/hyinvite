@@ -25,7 +25,9 @@ var gameImg = [
 	{path:'img/date03.png',type:'img',name:'date03'},
 	{path:'img/dateImg.png',type:'img',name:'dateImg'},
 	{path:'img/pageFourBkg.jpg',type:'img',name:'pageFourBkg'},
-	
+	{path:'img/page2.jpg',type:'img',name:'page2'},
+	{path:'img/logoBkg.png',type:'img',name:'logoBkg'},
+	{path:'img/bigplay.png',type:'img',name:'bigplay'},
 ];
 //全局函数
 var backLayer,logoText,loadup;
@@ -79,21 +81,196 @@ function loading(progress){
 	loadup.graphics.clear();
 	loadup.graphics.drawRoundRect(0,'#ffffff',[0,0,300*progress/100,10,5],true,'#ffffff');
 }
+function audioAutoPlay(id){
+    var audio = document.getElementById(id);
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        audio.play();
+    }, false);
+}
 //开始
 function gameStart(){
 	backLayer.remove();
 	$('#load').remove();
-	$('#mainContent').show();//上下拨动
+	$('#mainContent').show();
+	var player =document.getElementById('videot')
+	//上下拨动
+	var fade;
+	var fadeCheck;
 	var swiper = new Swiper('.swiper-container-main', {
 	    direction: 'vertical',
-	    initialSlide :2,
+	    initialSlide :0,
+	    onInit: function(swiper){
+		      $('.page1').eq(0).addClass('animated bounceInLeft');
+		 		$('.page1').eq(1).addClass('animated bounceInRight');
+		 		$('.page1').eq(2).addClass('animated bounceInLeft');
+		 		$('.page1').eq(3).addClass('animated rotateIn');
+		 		fade = setInterval(function(){
+		 			if(fadeCheck==true)
+		 			{
+		 				fadeCheck=false;
+		 				$('.logoBkg').animate({opacity:'1.0'},800);
+		 			}else{
+		 				fadeCheck=true;
+		 				$('.logoBkg').animate({opacity:'0.5'},800);
+		 			}		 			
+		 		},500);
+		 		$('.page3').removeClass('animated fadeInDown');
+		    },
+	    onSlideChangeStart: function(swiper){	    	
+		      if(swiper.activeIndex==1){
+
+		      }else{
+		      	player.pause();
+		      	$("#videoplay").show();
+		      }
+		 	var index = swiper.activeIndex;
+		 	if(index==0)
+		 	{
+		 		$('.page1').eq(0).addClass('animated bounceInLeft');
+		 		$('.page1').eq(1).addClass('animated bounceInRight');
+		 		$('.page1').eq(2).addClass('animated bounceInLeft');
+		 		$('.page1').eq(3).addClass('animated rotateIn');
+		 		fade = setInterval(function(){
+		 			if(fadeCheck==true)
+		 			{
+		 				fadeCheck=false;
+		 				$('.logoBkg').animate({opacity:'1.0'},800);
+		 			}else{
+		 				fadeCheck=true;
+		 				$('.logoBkg').animate({opacity:'0.5'},800);
+		 			}		 			
+		 		},500);
+		 		$('.page3').removeClass('animated fadeInDown');
+		 		$('.page41').removeClass('animated fadeInDown');
+		 		$('.page42').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page42').eq(1).removeClass('animated bounceInRight');
+		 		$('.page43').eq(0).removeClass('animated bounceInRight');
+		 		$('.page43').eq(1).removeClass('animated bounceInRight');
+		 		$('.page43').eq(2).removeClass('animated bounceInRight');
+		 		$('.page43').eq(3).removeClass('animated bounceInLeft');
+		 		$('.page43').eq(4).removeClass('animated bounceInLeft');
+		 		$('.page43').eq(5).removeClass('animated bounceInRight');
+		 		$('.page43').eq(6).removeClass('animated bounceInRight');
+		 		$('.page44').eq(0).removeClass('animated fadeInUp');
+		 		$('.page45').eq(0).removeClass('animated fadeIn');
+		 		$('.page5').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page5').eq(1).removeClass('animated bounceInRight');
+		 	}else if(index==2){
+		 		//3
+		 		$('.page3').addClass('animated fadeInDown');
+		 		//1
+		 		clearInterval(fade);
+		 		fadeCheck=true;
+		 		$('.page1').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page1').eq(1).removeClass('animated bounceInRight');
+		 		$('.page1').eq(2).removeClass('animated bounceInLeft');
+		 		$('.page1').eq(3).removeClass('animated rotateIn');
+		 		$('.page41').removeClass('animated fadeInDown');
+		 		$('.page42').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page42').eq(1).removeClass('animated bounceInRight');
+		 		$('.page43').eq(0).removeClass('animated bounceInRight');
+		 		$('.page43').eq(1).removeClass('animated bounceInRight');
+		 		$('.page43').eq(2).removeClass('animated bounceInRight');
+		 		$('.page43').eq(3).removeClass('animated bounceInLeft');
+		 		$('.page43').eq(4).removeClass('animated bounceInLeft');
+		 		$('.page43').eq(5).removeClass('animated bounceInRight');
+		 		$('.page43').eq(6).removeClass('animated bounceInRight');
+		 		$('.page44').eq(0).removeClass('animated fadeInUp');
+		 		$('.page45').eq(0).removeClass('animated fadeIn');
+		 		$('.page5').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page5').eq(1).removeClass('animated bounceInRight');
+		 	}
+		 	else if(index==3)
+		 	{
+		 		$('.page41').addClass('animated fadeInDown');
+		 		$('.page42').eq(0).addClass('animated bounceInLeft');
+		 		$('.page42').eq(1).addClass('animated bounceInRight');
+		 		$('.page43').eq(0).addClass('animated bounceInRight');
+		 		$('.page43').eq(1).addClass('animated bounceInRight');
+		 		$('.page43').eq(2).addClass('animated bounceInRight');
+		 		$('.page43').eq(3).addClass('animated bounceInLeft');
+		 		$('.page43').eq(4).addClass('animated bounceInLeft');
+		 		$('.page43').eq(5).addClass('animated bounceInRight');
+		 		$('.page43').eq(6).addClass('animated bounceInRight');
+		 		$('.page44').eq(0).addClass('animated fadeInUp');
+		 		$('.page45').eq(0).addClass('animated fadeIn');
+		 		clearInterval(fade);
+		 		fadeCheck=true;
+		 		$('.page1').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page1').eq(1).removeClass('animated bounceInRight');
+		 		$('.page1').eq(2).removeClass('animated bounceInLeft');
+		 		$('.page1').eq(3).removeClass('animated rotateIn');
+		 		$('.page3').removeClass('animated fadeInDown');
+		 		$('.page5').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page5').eq(1).removeClass('animated bounceInRight');
+		 	}else if(index==4){
+		 		$('.page5').eq(0).addClass('animated bounceInLeft');
+		 		$('.page5').eq(1).addClass('animated bounceInRight');
+		 		$('.page3').removeClass('animated fadeInDown');
+		 		clearInterval(fade);
+		 		fadeCheck=true;
+		 		$('.page1').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page1').eq(1).removeClass('animated bounceInRight');
+		 		$('.page1').eq(2).removeClass('animated bounceInLeft');
+		 		$('.page1').eq(3).removeClass('animated rotateIn');
+		 		$('.page41').removeClass('animated fadeInDown');
+		 		$('.page42').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page42').eq(1).removeClass('animated bounceInRight');
+		 		$('.page43').eq(0).removeClass('animated bounceInRight');
+		 		$('.page43').eq(1).removeClass('animated bounceInRight');
+		 		$('.page43').eq(2).removeClass('animated bounceInRight');
+		 		$('.page43').eq(3).removeClass('animated bounceInLeft');
+		 		$('.page43').eq(4).removeClass('animated bounceInLeft');
+		 		$('.page43').eq(5).removeClass('animated bounceInRight');
+		 		$('.page43').eq(6).removeClass('animated bounceInRight');
+		 		$('.page44').eq(0).removeClass('animated fadeInUp');
+		 		$('.page45').eq(0).removeClass('animated fadeIn');
+		 		
+		 	}else{
+		 		clearInterval(fade);
+		 		fadeCheck=true;
+		 		$('.page1').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page1').eq(1).removeClass('animated bounceInRight');
+		 		$('.page1').eq(2).removeClass('animated bounceInLeft');
+		 		$('.page1').eq(3).removeClass('animated rotateIn');
+		 		$('.page3').removeClass('animated fadeInDown');
+		 		$('.page41').removeClass('animated fadeInDown');
+		 		$('.page42').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page42').eq(1).removeClass('animated bounceInRight');
+		 		$('.page43').eq(0).removeClass('animated bounceInRight');
+		 		$('.page43').eq(1).removeClass('animated bounceInRight');
+		 		$('.page43').eq(2).removeClass('animated bounceInRight');
+		 		$('.page43').eq(3).removeClass('animated bounceInLeft');
+		 		$('.page43').eq(4).removeClass('animated bounceInLeft');
+		 		$('.page43').eq(5).removeClass('animated bounceInRight');
+		 		$('.page43').eq(6).removeClass('animated bounceInRight');
+		 		$('.page44').eq(0).removeClass('animated fadeInUp');
+		 		$('.page45').eq(0).removeClass('animated fadeIn');
+		 		$('.page5').eq(0).removeClass('animated bounceInLeft');
+		 		$('.page5').eq(1).removeClass('animated bounceInRight');
+		 	}
+		}
 	});
-	$('.person ul li input').on('touchstart',function(){
-		$(this).focus();
+	player.addEventListener('play',function(){
+		$('#videoplay').hide();
 	});
-	$('.person ul li select').on('touchstart',function(){
+	player.addEventListener('pause',function(){
+		$('#videoplay').show();
+	});
+	player.addEventListener('ended',function(){
+		$('#videoplay').show();
+	});
+	//播放视频
+	$('#videoplay img').on('touchstart',function(event){
+		$('#videoplay').hide();
+		player.play();
+	});
+	//获取焦点
+	$('.person ul li input').on('touchstart',function(event){
 		$(this).focus();
-		document.getElementById("s").size=document.getElementById("s").options.length;
+		var e = event||window.event;
+		e.stopPropagation();
 	});
 	$('#check').on('touchstart',function(){
 		if($(this).attr('check')=='true')
@@ -108,14 +285,14 @@ function gameStart(){
 		}	
 	});
 	//开始箭头向下动画
-	$('.up').animate({bottom:'6%',opacity:'0'},600,function(){
+	$('.up').animate({bottom:'5%',opacity:'0'},600,function(){
 		$(this).css('opacity',1);
-		$(this).css('bottom','10%');
+		$(this).css('bottom','8%');
 	});
 	var uptime = setInterval(function(){
-		$('.up').animate({bottom:'6%',opacity:'0'},600,function(){
+		$('.up').animate({bottom:'5%',opacity:'0'},600,function(){
 			$(this).css('opacity',1);
-			$(this).css('bottom','10%');
+			$(this).css('bottom','8%');
 		});
 	},600);
 	$('.up img').on('touchstart',function(){
@@ -136,10 +313,34 @@ function gameStart(){
 	    autoplay : 5000,
 	    loop:true,
 	    autoplayDisableOnInteraction : false,
-	    pagination: '.swiper-pagination',
+	    pagination: '.swiper-pagination',  
+	    onSlideChangeStart: function(swiper){
+	    	var index = swiper.activeIndex%3;
+	    	if(index==1)
+	    	{
+	    		$('.bt1').addClass('animated rotateIn');
+		    	$('.bt2').removeClass('animated bounceInDown');
+		    	$('.bt3').removeClass('animated bounceInUp');
+	    	}else if(index==2)
+	    	{
+	    		$('.bt2').addClass('animated bounceInDown');
+	    		$('.bt1').removeClass('animated rotateIn');
+		    	$('.bt3').removeClass('animated bounceInUp');
+	    	}else{
+	    		$('.bt3').addClass('animated bounceInUp');
+	    		$('.bt1').removeClass('animated rotateIn');
+		    	$('.bt2').removeClass('animated bounceInDown');
+	    	}
+	    	
+	    }
 	});
-	$('.bannerBottom').height(($(window).innerHeight()-$('.swiper-container-banner').height()));
+//	$('.bannerBottom').height(($(window).innerHeight()-$('.swiper-container-banner').height()));
 	$('#rightnow').on('touchstart',function(){
 		swiper.slideNext();
+	});
+	$('.person').on('touchstart',function(event){
+		var e = event||window.event;
+		e.stopPropagation();
+		$('.person ul li input').blur ();
 	});
 }
