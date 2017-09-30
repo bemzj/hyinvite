@@ -15,7 +15,7 @@
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-	<div id="load"></div>
+	<div id="load" style="z-index: 999;"></div>
 	<div id="mainContent">
 		<div class="swiper-container swiper-container-main">
 	        <div class="swiper-wrapper">
@@ -59,19 +59,44 @@
 		        				<div class="swiper-slide">
 		        					<div class="bannerBox">
 		        						<img src="img/banner01.jpg" />
-		        						<img src="img/btitle01.png" class="bt1" />
+		        						<!--<img src="img/btitle01.png" class="bt1" />-->
+		        						<div class="bp">
+		        							<img class="bp001" src="img/bp001.png" />
+		        							<img class="bp002" src="img/bp002.png" />
+		        							<img class="bp003" src="img/bp003.png" />
+		        							<img class="bp004" src="img/bp004.png" />
+		        							<img class="bp005" src="img/bp005.png" />
+		        							<img class="bp006" src="img/bp006.png" />
+		        						</div>
 		        					</div>
 		        				</div>
 		        				<div class="swiper-slide">
 		        					<div class="bannerBox">
 		        						<img src="img/banner02.jpg" />
-		        						<img src="img/btitle02.png" class="bt2"/>
+		        						<!--<img src="img/btitle02.png" class="bt2"/>-->
+		        						<div class="bw">
+		        							<img class="bw001" src="img/bw001.png" />
+		        							<img class="bw002" src="img/bw002.png" />
+		        							<img class="bw003" src="img/bw003.png" />
+		        							<img class="bw004" src="img/bw004.png" />
+		        							<img class="bw005" src="img/bw005.png" />
+		        							<img class="bw006" src="img/bw006.png" />
+		        						</div>
 		        					</div>
 		        				</div>
 		        				<div class="swiper-slide">
 		        					<div class="bannerBox">
 		        						<img src="img/banner03.jpg" />
-		        						<img src="img/btitle03.png" class="bt3"/>
+		        						<img src="img/bt3.png" class="bt3"/>
+		        						<div class="btt">
+		        							<img class="bt001" src="img/bt001.png" />
+		        							<img class="bt002" src="img/bt002.png" />
+		        							<img class="bt003" src="img/bt003.png" />
+		        							<img class="bt004" src="img/bt004.png" />
+		        							<img class="bt005" src="img/bt005.png" />
+		        							<img class="bt006" src="img/bt006.png" />
+		        						</div>
+		        						
 		        					</div>
 		        				</div>
 		        			</div>
@@ -162,7 +187,10 @@
 
 	        </div>
 	    </div>
+	    <img src="img/music1.png" id="music" />
 	</div>
+	
+	<audio id="Jaudio"  preload autoplay="autoplay" loop="loop" src="http://res1.eqh5.com/store/fcbdfaa6d9348f4441eec0ff92552326.mp3" hidden="hidden"></audio >
     <script type="text/javascript" src="js/swiper-3.4.2.min.js" ></script>
     <script type="text/javascript" src="js/index.js" ></script>
     <script>
