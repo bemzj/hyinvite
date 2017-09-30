@@ -338,9 +338,9 @@ function gameStart(){
 	$('#rightnow').on('touchstart',function(){
 		swiper.slideNext();
 	});
-	$('.person').on('touchstart',function(event){
+	$('.person ul').on('touchstart',function(event){
 		var e = event||window.event;
 		e.stopPropagation();
-		$('.person ul li input').blur ();
+		$('.person ul li input').blur();
 	});
 }

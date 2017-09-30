@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Swiper demo</title>
+    <title>汇亚TT现代砖嘻哈年轻夜</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
     <meta content="yes" name="apple-mobile-web-app-capable"/>
 	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
@@ -22,8 +22,16 @@
 	        	<div class="swiper-slide">
 	        		<div id="pageOne">
 	        			<div class="pageTop">
-	        				<img src="img/videoOne.jpg" />
+                            <video id="sp" src="sp.mp4" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline=""></video>
+<!--	        				<img src="img/videoOne.jpg" />-->
 	        			</div>
+                        <script type="text/javascript">
+                            $(function(){
+                                $('.pageTop').on("click",function(){
+                                    $('#sp')[0].play();
+                                })
+                            })
+                        </script>
 	        			<div class="pageBottom">	        				
 	        				<img src="img/pageOneTitle.png" class="page1"/>
 	        				<p class="page1">时间：2017年10月21日</p>
@@ -38,7 +46,7 @@
 	        	</div>
 	        	<div class="swiper-slide">
 	        		<div id="pageTwo">
-	        			<video id="videot" class="videos show" style="object-fit: fill" autoplay="autoplay" preload="auto"  x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="" src="http://wqs.jd.com/promote/superfestival/superfestival.mp4" width="1" height="1" type="video/mp4" style="opacity: 1;"></video>
+	        			<video id="videot" class="videos show" style="object-fit: fill"  preload="auto"  x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="" src="http://wqs.jd.com/promote/superfestival/superfestival.mp4" width="1" height="1" type="video/mp4" style="opacity: 1;"></video>
 	        			<div id="videoplay">
 	        				<img src="img/bigplay.png" />
 	        			</div>
