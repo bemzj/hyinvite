@@ -60,6 +60,8 @@ var gameImg = [
 	{path:'img/lr.png',type:'img',name:'lr'},
 	{path:'img/music.png',type:'img',name:'music'},
 	{path:'img/music1.png',type:'img',name:'music1'},
+	{path:'img/bgmusi.png',type:'img',name:'bgmusi'},
+	{path:'img/bgmusiCloes.png',type:'img',name:'bgmusiCloes.png'},
 ];
 //全局函数
 var backLayer,logoText,loadup;
@@ -117,13 +119,28 @@ function loading(progress){
 	loadup.graphics.clear();
 	loadup.graphics.drawRoundRect(0,'#ffffff',[0,0,300*progress/100,10,5],true,'#ffffff');
 }
-function audioAutoPlay(id){
+function audioAutoPlay(id,hs){
     var audio = document.getElementById(id);
-    audio.play();
-    document.addEventListener("WeixinJSBridgeReady", function () {
+    if(hs==1){
         audio.play();
+        audio.pause();
+
+	}else{
+        audio.play();
+	}
+
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        if(hs==1){
+            audio.play();
+            audio.pause();
+
+        }else{
+            audio.play();
+        }
     }, false);
 }
+audioAutoPlay('Jaudio');
+audioAutoPlay('spMp3',1);
 function bigAndSmall(tween,x,y,time,scales,delayTime,loops){
 	var bigBeforeX = tween.x;
 	var bigBeforeY = tween.y;
@@ -262,45 +279,48 @@ function opening(result){
 				t042.visible=true;
 				t043.visible=true;
 				t04.visible=true;
-				bigAndSmall(t04,2,2,2.5,15,0,false);
-				LTweenLite.to(t04,1.5,{alpha:0});
-				bigAndSmall(t043,2,2,2.5,15,0.5,false);
-				LTweenLite.to(t043,1.5,{alpha:0});
-				bigAndSmall(t042,2,2,2.5,15,1.0,false);
-				LTweenLite.to(t042,1.5,{alpha:0,onComplete:function(){
-					bigAndSmall(t041,2,2,1.8,-0.5,0,false);
-					bigAndSmall(t0411,2,2,1.8,-0.5,0,false);
-					bigAndSmall(t0412,2,2,1.8,-0.5,0,false);
+				bigAndSmall(t04,0.5,2,2.5,15,0,false);
+				LTweenLite.to(t04,1,{alpha:0});
+				bigAndSmall(t043,1,2,2.5,15,0.5,false);
+				LTweenLite.to(t043,0.5,{alpha:0});
+				bigAndSmall(t042,1,2,2.5,15,1.0,false);
+				LTweenLite.to(t042,0.5,{alpha:0,onComplete:function(){
+					bigAndSmall(t041,1,2,1.8,-0.5,0,false);
+					bigAndSmall(t0411,1,2,1.8,-0.5,0,false);
+					bigAndSmall(t0412,1,2,1.8,-0.5,0,false);
 					setTimeout(function(){
-						LTweenLite.to(t041,1.0,{alpha:0,onStart:function(){
-							LTweenLite.to(t0411,1.0,{alpha:1.0,x:80});
-							LTweenLite.to(t0412,1.0,{alpha:1.0,x:400,onComplete:function(){
-								LTweenLite.to(lr,1.0,{x:0});
+						LTweenLite.to(t041,0.5,{alpha:0,onStart:function(){
+							LTweenLite.to(t0411,0.5,{alpha:1.0,x:80});
+							LTweenLite.to(t0412,0.5,{alpha:1.0,x:400,onComplete:function(){
+								LTweenLite.to(lr,0.5,{x:0});
 								
-								LTweenLite.to(lb,1.0,{x:0,onComplete:function(){
+								LTweenLite.to(lb,0.5,{x:0,onComplete:function(){
 									t0411.visible=false;
 									t0412.visible=false;
-									LTweenLite.to(lr,1.5,{x:-750,delay:0.5});
-									LTweenLite.to(lb,1.5,{x:750,delay:0.5});
-									LTweenLite.to(tp01,2.0,{alpha:1,delay:0.8});
-									LTweenLite.to(tp02,2.0,{alpha:1,delay:1.0});
-									LTweenLite.to(tp03,2.0,{alpha:1,delay:1.2});
-									LTweenLite.to(tp04,2.0,{alpha:1,delay:1.4,onComplete:function(){
-										LTweenLite.to(tp01,0.3,{delay:0,x:-650});
-										LTweenLite.to(tp02,0.3,{delay:0.1,x:750});
-										LTweenLite.to(tp03,0.3,{delay:0.2,x:-650});
-										LTweenLite.to(tp04,0.3,{delay:0.3,x:750});
-										LTweenLite.to(tp05,2.0,{delay:0.8,alpha:1,onComplete:function(){
+									LTweenLite.to(lr,0.5,{x:-750,delay:0.5});
+									LTweenLite.to(lb,0.5,{x:750,delay:0.5});
+									LTweenLite.to(tp01,1.0,{alpha:1,delay:0.8});
+									LTweenLite.to(tp02,1.0,{alpha:1,delay:1.0});
+									LTweenLite.to(tp03,1.0,{alpha:1,delay:1.2});
+									LTweenLite.to(tp04,1.0,{alpha:1,delay:1.4,onComplete:function(){
+										LTweenLite.to(tp01,0.1,{delay:0,x:-650});
+										LTweenLite.to(tp02,0.1,{delay:0.1,x:750});
+										LTweenLite.to(tp03,0.1,{delay:0.2,x:-650});
+										LTweenLite.to(tp04,0.1,{delay:0.3,x:750});
+										LTweenLite.to(tp05,1.0,{delay:0.8,alpha:1,onComplete:function(){
 											
-											LTweenLite.to(lr,0.6,{x:0,delay:0});
-											LTweenLite.to(lb,0.6,{x:0,delay:0,onComplete:function(){
+											LTweenLite.to(lr,0.3,{x:0,delay:0});
+											LTweenLite.to(lb,0.3,{x:0,delay:0,onComplete:function(){
 												tp05.visible = false;
 												tp06.alpha = 1.0;
-												LTweenLite.to(lr,1.5,{x:-750,delay:0.5});
-												LTweenLite.to(lb,1.5,{x:750,delay:0.5,onComplete:function(){
-													LTweenLite.to(backLayer,1,{alpha:0,delay:0.5});
+												LTweenLite.to(lr,0.5,{x:-750,delay:0.5});
+												LTweenLite.to(lb,0.5,{x:750,delay:0.5,onComplete:function(){
+													LTweenLite.to(backLayer,0.5,{alpha:0,delay:0.5});
 													setTimeout(function(){
 														gameStart();
+                                                        document.getElementById('Jaudio').pause();
+
+                                                        $('#music').hide();
 													},500);
 												}});
 												
@@ -322,7 +342,7 @@ function gameStart(){
 		backLayer.remove();
 		$('#load').remove();
 	});
-	var player =document.getElementById('videot')
+	var player =document.getElementById('videot');
 	//上下拨动
 	var fade;
 	var fadeCheck;
@@ -346,7 +366,9 @@ function gameStart(){
 		 		},500);
 		 		$('.page3').removeClass('animated fadeInDown');
 		    },
-	    onSlideChangeStart: function(swiper){	    	
+	    onSlideChangeStart: function(swiper){
+	    	  $('input').blur();
+            document.getElementById('spMp3').pause();
 		      if(swiper.activeIndex==1){
 
 		      }else{
@@ -482,12 +504,15 @@ function gameStart(){
 		}
 	});
 	player.addEventListener('play',function(){
+
 		$('#videoplay').hide();
 	});
 	player.addEventListener('pause',function(){
+        $('#videot').hide();
 		$('#videoplay').show();
 	});
 	player.addEventListener('ended',function(){
+        $('#videot').hide();
 		$('#videoplay').show();
 	});
 	//播放视频
@@ -774,6 +799,44 @@ function gameStart(){
 					},25);
 				}
 			});
+    var spMp3=document.getElementById('spMp3');
+	$('#spMp3Play').on('touchstart',function(){
+		$('#spMp3').show();
+        spMp3.play();
+        $('#spMp3Play').hide();
+
+	});
+    spMp3.addEventListener('ended',function(){
+        $('#spMp3').hide();
+
+        $('#spMp3Play').show();
+    });
+    spMp3.addEventListener('pause',function(){
+        $('#spMp3').hide();
+
+        $('#spMp3Play').show();
+    });
+    $('#submit').on('touchstart',function(){
+    	var name=$('#name').val();
+    	var mobile=$('#mobile').val();
+    	var numbers=$('#numbers').val();
+		$.ajax({
+			url:'http://huiya.hengdikeji.com/api/index.php/index/users/sign',
+			type:'POST',
+			data:{
+				"name":name,
+				"mobile":mobile,
+				"numbers":numbers
+			},
+            success: function(data){
+                if(data.code == 1){
+                    layer.msg(data.msg);
+                }else{
+                    layer.msg(data.msg);
+                }
+            }
+		});
+	});
 }
 //音乐按钮类
 function musicBtn(x,y,sx,sy,name){
@@ -804,3 +867,4 @@ function musicBtn(x,y,sx,sy,name){
 		}
 	})
 }
+

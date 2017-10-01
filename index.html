@@ -9,7 +9,7 @@
 	<meta content="telephone=no" name="format-detection"/>
 	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css?v=2"/>
 	<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 	<script type="text/javascript" src="js/lufylegend-1.10.1.min.js" ></script>
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -22,16 +22,14 @@
 	        	<div class="swiper-slide">
 	        		<div id="pageOne">
 	        			<div class="pageTop">
-                            <video id="sp" src="sp.mp4" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline=""></video>
-<!--	        				<img src="img/videoOne.jpg" />-->
+                            <video id="spMp3" src="sp.mp4"  preload="auto"  webkit-playsinline style="display: none;"></video>
+	        				<div id="spMp3Play">
+
+                                <div class="bgmusi"><img src="img/bigplay.png" alt=""></div>
+                            </div>
+
 	        			</div>
-                        <script type="text/javascript">
-                            $(function(){
-                                $('.pageTop').on("click",function(){
-                                    $('#sp')[0].play();
-                                })
-                            })
-                        </script>
+
 	        			<div class="pageBottom">	        				
 	        				<img src="img/pageOneTitle.png" class="page1"/>
 	        				<p class="page1">时间：2017年10月21日</p>
@@ -46,9 +44,9 @@
 	        	</div>
 	        	<div class="swiper-slide">
 	        		<div id="pageTwo">
-	        			<video id="videot" class="videos show" style="object-fit: fill"  preload="auto"  x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="" src="http://wqs.jd.com/promote/superfestival/superfestival.mp4" width="1" height="1" type="video/mp4" style="opacity: 1;"></video>
+	        			<video id="videot" class="videos show" src="pz.mp4" width="1" height="1" type="video/mp4" style="opacity: 1;object-fit: fill"></video>
 	        			<div id="videoplay">
-	        				<img src="img/bigplay.png" />
+	        				<img src="img/bigplay.png"/>
 	        			</div>
 	        		</div>
 	        	</div>
@@ -158,13 +156,13 @@
 		            				<p class="page5">暨嘻哈年轻夜</p>
 		            			</li>
 		            			<li>
-		            				<input type="text" placeholder="姓名" />
+		            				<input type="text" id="name" placeholder="姓名" />
 		            			</li>
 		            			<li>
-		            				<input type="text" placeholder="手机" maxlength="11"/>
+		            				<input type="text" id="mobile" placeholder="手机" maxlength="11"/>
 		            			</li>
 		            			<li>
-		            				<input type="number" placeholder="人数" />
+		            				<input type="number" id="numbers" placeholder="人数" />
 		            			</li>
 		            			<li>
 		            				<div class="perBox">
@@ -178,7 +176,7 @@
 		            				</div>			
 		            			</li>
 		            			<li>
-		            				<button>马上提交</button>
+		            				<button id="submit">马上提交</button>
 		            			</li>
 		            		</ul>
 		            	</div>
@@ -190,12 +188,17 @@
 	    <img src="img/music1.png" id="music" />
 	</div>
 	
-	<audio id="Jaudio"  preload autoplay="autoplay" loop="loop" src="http://res1.eqh5.com/store/fcbdfaa6d9348f4441eec0ff92552326.mp3" hidden="hidden"></audio >
+	<audio id="Jaudio"  preload autoplay="autoplay" loop="loop" src="bg.mp3" hidden="hidden"></audio >
+	<audio id=""  preload loop="loop" hidden="hidden"></audio >
+    <script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
     <script type="text/javascript" src="js/swiper-3.4.2.min.js" ></script>
-    <script type="text/javascript" src="js/index.js" ></script>
+    <script type="text/javascript" src="js/index.js?v=21" ></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script>
+
 	    //px转rem
 	    (function(doc, win) {
+
             var docEl = doc.documentElement,
                 resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
                 recalc = function() {
@@ -211,7 +214,61 @@
             if (!doc.addEventListener) return;
             win.addEventListener(resizeEvt, recalc, false);
             doc.addEventListener('DOMContentLoaded', recalc, false);
+
+            $.ajax({
+                type:'GET',
+                url:'http://huiya.hengdikeji.com/jsssdk/',
+                dataType:'JSON',
+                success:function(res){
+                    wx.config({
+                        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                        appId:res.appId, // 必填，公众号的唯一标识
+
+                        timestamp: res.timestamp, // 必填，生成签名的时间戳
+
+                        nonceStr:res.nonceStr, // 必填，生成签名的随机串
+
+                        signature:res.signature,// 必填，签名，见附录1
+
+                        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+
+                    });
+                    wx.ready(function () {
+                        wx.onMenuShareTimeline({
+                            title: '汇亚TT现代砖全球招商会',
+                            desc: '嘻哈年轻会',
+                            link: res.url,
+                            imgUrl: 'http://huiya.hengdikeji.com/api/hyinvite/img/fxt.png',
+                            trigger: function (res) {
+                            },
+                            success: function (res) {
+                            },
+                            cancel: function (res) {
+                            },
+                            fail: function (res) {
+                                alert(JSON.stringify(res));
+                            }
+                        });
+                        wx.onMenuShareAppMessage({
+                            title: '汇亚TT现代砖全球招商会',
+                            desc: '嘻哈年轻会',
+                            link: res.url,
+                            imgUrl: 'http://huiya.hengdikeji.com/api/hyinvite/img/fxt.png',
+                            trigger: function (res) {
+                            },
+                            success: function (res) {
+                            },
+                            cancel: function (res) {
+                            },
+                            fail: function (res) {
+                                alert(JSON.stringify(res));
+                            }
+                        });
+                    })
+                }
+            });
         })(document, window);
+
     </script>
 </body>
 </html>
