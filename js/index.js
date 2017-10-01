@@ -61,6 +61,7 @@ var gameImg = [
 	{path:'img/music.png',type:'img',name:'music'},
 	{path:'img/music1.png',type:'img',name:'music1'},
 	{path:'img/bgmusi.png',type:'img',name:'bgmusi'},
+	{path:'img/p1.png',type:'img',name:'p1'},
 	{path:'img/bgmusiCloes.png',type:'img',name:'bgmusiCloes.png'},
 ];
 //全局函数
@@ -242,6 +243,14 @@ function opening(result){
 	tp06.x = 141;
 	tp06.y = 555;
 	tp06.alpha = 0;
+	
+	var p1 = new LBitmap(new LBitmapData(result['p1']));
+	backLayer.addChild(p1);
+	p1.scaleX=1.8;
+	p1.scaleY=1.8;
+	p1.x = (LGlobal.width-p1.getWidth())/2;
+	p1.y = 555;
+	p1.alpha = 0;
 	//背景
 	var lr = new LBitmap(new LBitmapData(result['lr']));
 	backLayer.addChild(lr);
@@ -256,17 +265,7 @@ function opening(result){
 		t01.visible=false;
 		tween = setInterval(function(){
 			time++;
-			if(rule==true)
-			{
-				rule=false;
-				t02.visible=false;
-				t03.visible=true;
-			}else{
-				rule=true;
-				t03.visible=false;
-				t02.visible=true;
-			}
-			if(time==30)
+			if(time==1)
 			{
 				clearInterval(tween);
 				t02.visible=false;
@@ -299,34 +298,39 @@ function opening(result){
 									t0412.visible=false;
 									LTweenLite.to(lr,0.5,{x:-750,delay:0.5});
 									LTweenLite.to(lb,0.5,{x:750,delay:0.5});
-									LTweenLite.to(tp01,1.0,{alpha:1,delay:0.8});
-									LTweenLite.to(tp02,1.0,{alpha:1,delay:1.0});
-									LTweenLite.to(tp03,1.0,{alpha:1,delay:1.2});
-									LTweenLite.to(tp04,1.0,{alpha:1,delay:1.4,onComplete:function(){
-										LTweenLite.to(tp01,0.1,{delay:0,x:-650});
-										LTweenLite.to(tp02,0.1,{delay:0.1,x:750});
-										LTweenLite.to(tp03,0.1,{delay:0.2,x:-650});
-										LTweenLite.to(tp04,0.1,{delay:0.3,x:750});
-										LTweenLite.to(tp05,1.0,{delay:0.8,alpha:1,onComplete:function(){
-											
-											LTweenLite.to(lr,0.3,{x:0,delay:0});
-											LTweenLite.to(lb,0.3,{x:0,delay:0,onComplete:function(){
-												tp05.visible = false;
-												tp06.alpha = 1.0;
-												LTweenLite.to(lr,0.5,{x:-750,delay:0.5});
-												LTweenLite.to(lb,0.5,{x:750,delay:0.5,onComplete:function(){
-													LTweenLite.to(backLayer,0.5,{alpha:0,delay:0.5});
-													setTimeout(function(){
-														gameStart();
-                                                        // document.getElementById('Jaudio').pause();
-
-                                                        // $('#music').hide();
-													},500);
+									LTweenLite.to(p1,0.5,{alpha:1.0,delay:0.5,onComplete:function(){
+										LTweenLite.to(p1,0.5,{alpha:0,delay:0.8,onComplete:function(){
+												LTweenLite.to(tp01,1.0,{alpha:1,delay:0.8});
+												LTweenLite.to(tp02,1.0,{alpha:1,delay:1.0});
+												LTweenLite.to(tp03,1.0,{alpha:1,delay:1.2});
+												LTweenLite.to(tp04,1.0,{alpha:1,delay:1.4,onComplete:function(){
+													LTweenLite.to(tp01,0.1,{delay:0,x:-650});
+													LTweenLite.to(tp02,0.1,{delay:0.1,x:750});
+													LTweenLite.to(tp03,0.1,{delay:0.2,x:-650});
+													LTweenLite.to(tp04,0.1,{delay:0.3,x:750});
+													LTweenLite.to(tp05,1.0,{delay:0.8,alpha:1,onComplete:function(){
+														
+														LTweenLite.to(lr,0.3,{x:0,delay:0});
+														LTweenLite.to(lb,0.3,{x:0,delay:0,onComplete:function(){
+															tp05.visible = false;
+															tp06.alpha = 1.0;
+															LTweenLite.to(lr,0.5,{x:-750,delay:0.5});
+															LTweenLite.to(lb,0.5,{x:750,delay:0.5,onComplete:function(){
+																LTweenLite.to(backLayer,0.5,{alpha:0,delay:0.5});
+																setTimeout(function(){
+																	gameStart();
+																},500);
+															}});
+															
+														}});
+													}});
 												}});
-												
-											}});
 										}});
+//												
 									}});
+									
+
+
 								}});
 							}});
 						}});
