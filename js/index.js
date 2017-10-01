@@ -318,9 +318,9 @@ function opening(result){
 													LTweenLite.to(backLayer,0.5,{alpha:0,delay:0.5});
 													setTimeout(function(){
 														gameStart();
-                                                        document.getElementById('Jaudio').pause();
+                                                        // document.getElementById('Jaudio').pause();
 
-                                                        $('#music').hide();
+                                                        // $('#music').hide();
 													},500);
 												}});
 												
@@ -599,26 +599,26 @@ function gameStart(){
 	    		$('.bp004').addClass('animated bounceInRight');
 	    		$('.bp005').addClass('animated bounceInLeft');
 	    		$('.bp006').addClass('animated bounceInUp');
-	    		bptime = setInterval(function(){
-	    			$('.bp002').stop().animate({left:'26.1%'},150,function(){
-	    				$(this).stop().animate({left:'25.6%'},150);
-	    			});
-	    			$('.bp004').stop().animate({left:'20.2%'},150,function(){
-	    				$(this).stop().animate({left:'19.7%'},150);
-	    			});
-	    			$('.bp006').stop().animate({left:'19.3%'},150,function(){
-	    				$(this).stop().animate({left:'18.8%'},150);
-	    			});
-	    			$('.bp001').stop().animate({left:'25.1%'},150,function(){
-	    				$(this).stop().animate({left:'25.6%'},150);
-	    			});
-	    			$('.bp003').stop().animate({left:'19.5%'},150,function(){
-	    				$(this).stop().animate({left:'20%'},150);
-	    			});
-	    			$('.bp005').stop().animate({left:'19.63%'},150,function(){
-	    				$(this).stop().animate({left:'20.13%'},150);
-	    			});
-	    		},1000);
+	    		// bptime = setInterval(function(){
+	    		// 	$('.bp002').stop().animate({left:'26.1%'},150,function(){
+	    		// 		$(this).stop().animate({left:'25.6%'},150);
+	    		// 	});
+	    		// 	$('.bp004').stop().animate({left:'20.2%'},150,function(){
+	    		// 		$(this).stop().animate({left:'19.7%'},150);
+	    		// 	});
+	    		// 	$('.bp006').stop().animate({left:'19.3%'},150,function(){
+	    		// 		$(this).stop().animate({left:'18.8%'},150);
+	    		// 	});
+	    		// 	$('.bp001').stop().animate({left:'25.1%'},150,function(){
+	    		// 		$(this).stop().animate({left:'25.6%'},150);
+	    		// 	});
+	    		// 	$('.bp003').stop().animate({left:'19.5%'},150,function(){
+	    		// 		$(this).stop().animate({left:'20%'},150);
+	    		// 	});
+	    		// 	$('.bp005').stop().animate({left:'19.63%'},150,function(){
+	    		// 		$(this).stop().animate({left:'20.13%'},150);
+	    		// 	});
+	    		// },1000);
 		    	//3
 		    	$('.bt001').removeClass('animated bounceInRight');
 	    		$('.bt002').removeClass('animated bounceInLeft');
@@ -645,26 +645,26 @@ function gameStart(){
 	    		$('.bw004').addClass('animated bounceInRight');
 	    		$('.bw005').addClass('animated bounceInLeft');
 	    		$('.bw006').addClass('animated bounceInUp');
-	    		bwtime = setInterval(function(){
-	    			$('.bw002').stop().animate({left:'18.5%'},150,function(){
-	    				$(this).stop().animate({left:'18%'},150);
-	    			});
-	    			$('.bw004').stop().animate({left:'20.1%'},150,function(){
-	    				$(this).stop().animate({left:'19.6%'},150);
-	    			});
-	    			$('.bw006').stop().animate({left:'13.7%'},150,function(){
-	    				$(this).stop().animate({left:'13.2%'},150);
-	    			});
-	    			$('.bw001').stop().animate({left:'31.76%'},150,function(){
-	    				$(this).stop().animate({left:'32.26%'},150);
-	    			});
-	    			$('.bw003').stop().animate({left:'17.9%'},150,function(){
-	    				$(this).stop().animate({left:'18.4%'},150);
-	    			});
-	    			$('.bw005').stop().animate({left:'13.5%'},150,function(){
-	    				$(this).stop().animate({left:'14%'},150);
-	    			});
-	    		},1000);
+	    		// bwtime = setInterval(function(){
+	    		// 	$('.bw002').stop().animate({left:'18.5%'},150,function(){
+	    		// 		$(this).stop().animate({left:'18%'},150);
+	    		// 	});
+	    		// 	$('.bw004').stop().animate({left:'20.1%'},150,function(){
+	    		// 		$(this).stop().animate({left:'19.6%'},150);
+	    		// 	});
+	    		// 	$('.bw006').stop().animate({left:'13.7%'},150,function(){
+	    		// 		$(this).stop().animate({left:'13.2%'},150);
+	    		// 	});
+	    		// 	$('.bw001').stop().animate({left:'31.76%'},150,function(){
+	    		// 		$(this).stop().animate({left:'32.26%'},150);
+	    		// 	});
+	    		// 	$('.bw003').stop().animate({left:'17.9%'},150,function(){
+	    		// 		$(this).stop().animate({left:'18.4%'},150);
+	    		// 	});
+	    		// 	$('.bw005').stop().animate({left:'13.5%'},150,function(){
+	    		// 		$(this).stop().animate({left:'14%'},150);
+	    		// 	});
+	    		// },1000);
 	    		//2
 		    	clearInterval(bptime);
 		    	$('.bp001').removeClass('animated bounceInDown');
@@ -705,37 +705,37 @@ function gameStart(){
 	    		$('.bt005').addClass('animated bounceInRight');
 	    		$('.bt006').addClass('animated bounceInLeft');
 	    		var imgChoice = true;
-	    		bttime3 = setInterval(function(){
-	    			$('.bt001').stop().animate({left:'19.9%'},150,function(){
-	    				$(this).stop().animate({left:'20.4%'},150);
-	    			});
-	    			$('.bt002').stop().animate({left:'20.9%'},150,function(){
-	    				$(this).stop().animate({left:'20.4%'},150);
-	    			});
-	    			$('.bt003').stop().animate({left:'6.51%'},150,function(){
-	    				$(this).stop().animate({left:'7.06%'},150);
-	    			});
-	    			$('.bt004').stop().animate({left:'7.56%'},150,function(){
-	    				$(this).stop().animate({left:'7.06%'},150);
-	    			});
-	    			$('.bt005').eq(4).stop().animate({left:'9.3%'},150,function(){
-	    				$(this).stop().animate({left:'9.8%'},150);
-	    			});
-	    			$('.bt006').stop().animate({left:'9.8%'},150,function(){
-	    				$(this).stop().animate({left:'9.3%'},150);
-	    			});
-	    			$('.bt3').stop().animate({opacity:'1.0'},150,function(){
-	    				$(this).stop().animate({opacity:'0'},150);
-	    				if(imgChoice==true)
-	    				{
-	    					imgChoice=false;
-	    					$(this).attr('src','img/bt3.png');
-	    				}else{
-	    					imgChoice=true;
-	    					$(this).attr('src','img/bt33.png');
-	    				}
-	    			});
-	    		},1000);
+	    		// bttime3 = setInterval(function(){
+	    		// 	$('.bt001').stop().animate({left:'19.9%'},150,function(){
+	    		// 		$(this).stop().animate({left:'20.4%'},150);
+	    		// 	});
+	    		// 	$('.bt002').stop().animate({left:'20.9%'},150,function(){
+	    		// 		$(this).stop().animate({left:'20.4%'},150);
+	    		// 	});
+	    		// 	$('.bt003').stop().animate({left:'6.51%'},150,function(){
+	    		// 		$(this).stop().animate({left:'7.06%'},150);
+	    		// 	});
+	    		// 	$('.bt004').stop().animate({left:'7.56%'},150,function(){
+	    		// 		$(this).stop().animate({left:'7.06%'},150);
+	    		// 	});
+	    		// 	$('.bt005').eq(4).stop().animate({left:'9.3%'},150,function(){
+	    		// 		$(this).stop().animate({left:'9.8%'},150);
+	    		// 	});
+	    		// 	$('.bt006').stop().animate({left:'9.8%'},150,function(){
+	    		// 		$(this).stop().animate({left:'9.3%'},150);
+	    		// 	});
+	    		// 	$('.bt3').stop().animate({opacity:'1.0'},150,function(){
+	    		// 		$(this).stop().animate({opacity:'0'},150);
+	    		// 		if(imgChoice==true)
+	    		// 		{
+	    		// 			imgChoice=false;
+	    		// 			$(this).attr('src','img/bt3.png');
+	    		// 		}else{
+	    		// 			imgChoice=true;
+	    		// 			$(this).attr('src','img/bt33.png');
+	    		// 		}
+	    		// 	});
+	    		// },1000);
 	    		//1
 	    		clearInterval(bwtime);
 		    	$('.bw001').removeClass('animated bounceInDown');
